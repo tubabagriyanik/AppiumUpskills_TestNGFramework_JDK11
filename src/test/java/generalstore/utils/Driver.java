@@ -4,12 +4,8 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 
 import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.time.Duration;
 
 import static generalstore.utils.ConfigReader.getProperty;
@@ -27,6 +23,7 @@ public class Driver {
                     + File.separator + getProperty("apkName");
 
             UiAutomator2Options options = new UiAutomator2Options()
+                    .setUiautomator2ServerInstallTimeout(Duration.ofSeconds(60))
                     .setApp(appUrl);
 
             driver = new AndroidDriver(service.getUrl(), options);
