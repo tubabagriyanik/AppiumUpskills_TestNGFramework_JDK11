@@ -1,0 +1,10 @@
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="generalstore.utils.Listener"/>
+    </listeners>
+    <test name="GeneralStore Smoke Testler">
+        <packages>
+            <package name="generalstore.tests"/>
+        </packages>
+    </test>
+</suite>
